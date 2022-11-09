@@ -1,0 +1,36 @@
+{% extends 'layouts/PaginaSaludMental.html' %}
+{% block content %}
+{% load static %}
+
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+  <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'bg.png' %}" alt="..." /></div>
+  <div class="col-lg-5">
+    <h1 class="font-weight-light">Bienvenido a tests de trastornos de salud mental</h1>
+    <p>La salud mental es un estado de bienestar mental que permite a las personas hacer frente a los momentos de estrés de la vida, desarrollar todas sus habilidades, poder aprender y trabajar adecuadamente y contribuir a la mejora de su comunidad.<br><strong>NO ESTAS SOLO<strong></p>
+    <a class="btn btn-ligth" href="{% url 'register' %}" style="background:#048fa0;color:#fff">Registrate!</a>
+    </div>
+</div>
+
+<h2 class="text-center" style="color:#ffab24">Autoevaluación</h2>
+<div class="card text-white bg-secondary my-5 py-4 text-center" id="tests">
+  <div class="card-body">
+    <p class="text-white m-0">¿Tienes un familiar con algún tipo de trastorno o adicción.? ¿Tú mismo crees que puedes padecerlo? Te animamos a que rellenes este cuestionario para que podamos analizar tu caso. En Ita podemos ayudarte.</p>
+  </div>
+</div>
+
+<div class="row gx-4 gx-lg-5">
+{% for test in tests %}
+  <div class="col-md-4 mb-5">
+    <div class="card h-100">
+      <div class="card-body" style="background:url({{test.upload}}) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size:cover;padding: 0px;">
+        <div style="background-color: rgb(17,17,17,0.5);padding:1em;min-height:100%">
+          <h3 class="card-title" style="color:#fff">{{test.nombre}}</h3>
+          <p class="card-text" style="color:#fff;text-align:justify">{{test.descripcion}}</p>
+        </div>
+      </div>
+      <div class="card-footer"><a class="btn btn-ligth btn-sm" href="#"  style="background:#048fa0;color:#fff">Realizar test</a></div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

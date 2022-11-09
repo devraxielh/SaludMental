@@ -1,0 +1,25 @@
+{% extends 'layouts/PaginaSaludMental.html' %}
+{% block content %}
+{% load static %}
+
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+  <h3>{{title}}</h3>
+  <p>{{descripcion}}</p>
+  <div class="row gx-4 gx-lg-5">
+    {% for test in tests %}
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body" style="background:url(../{{test.upload}}) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size:cover;padding: 0px;">
+            <div style="background-color: rgb(17,17,17,0.5);padding:1em;min-height:100%">
+              <h3 class="card-title" style="color:#fff">{{test.nombre}}</h3>
+              <p class="card-text" style="color:#fff;text-align:justify">{{test.descripcion}}</p>
+            </div>
+          </div>
+          <div class="card-footer"><a class="btn btn-ligth btn-sm" href="#"  style="background:#048fa0;color:#fff">Realizar test</a></div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

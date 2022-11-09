@@ -1,0 +1,63 @@
+{% extends 'layouts/PaginaSaludMental.html' %}
+{% block content %}
+{% load static %}
+
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+  <h3>{{title}}</h3>
+  <p>{{descripcion}}</p>
+  <div class="col-lg-8"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'contact.png' %}" alt="..." /></div>
+  <div class="col-lg-4">
+    <form>
+      <div class="form-group row">
+        <div class="col-12">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-align-left"></i>
+              </div>
+            </div>
+            <input id="text" name="text" type="text" class="form-control" placeholder="Nombre Completo" required="required">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-12">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-address-card-o"></i>
+              </div>
+            </div>
+            <input id="text1" name="text1" type="email" class="form-control" placeholder="Correo" required="required">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-12">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-volume-control-phone"></i>
+              </div>
+            </div>
+            <input id="text2" name="text2" type="tel" placeholder="Telefono" class="form-control" required="required">
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-12">
+          <textarea id="textarea" name="textarea" cols="40" rows="5" placeholder="Solicitud" class="form-control" required="required"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-12">
+          <button name="submit" type="submit" class="btn btn-ligth" style="background:#048fa0;color:#fff">Contactar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+<iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=universidad%20de%20cordoba&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+<br><br><br>
+{% endblock %}
